@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{ dialogTitle }}</h2>
+<mat-dialog-content>
+  <p>{{ type == "create" ? "Requested Seats?" : "Existing Booking Id?" }}</p>
+  <mat-form-field>
+    <input matInput type="number" [min]="1" [max]="max" [(ngModel)]="value" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="closeValue">No Thanks</button>
+  <button mat-button (click)="closeDialog(type)">Ok</button>
+</mat-dialog-actions>
